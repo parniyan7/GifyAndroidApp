@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GifsRepository</string>
+
+    <string name="error_403">Too many requests, try a few minutes later</string>
+    <string name="error_404">User Not Found</string>
+    <string name="error_not_defined">Http Error not defined</string>
+    <string name="permission_denied">Permission Denied</string>
+    <string name="unresolve_host">Unable to resolve host</string>
+    <string name="something_bad_happened">Something bad occurred, try later</string>
+    <string name="timeout">Timeout</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="search">Search</string>
+    <string name="ssl_handshake">SSL handshake</string>
+
+    <string name="no_results_found">No Results Found</string>
+    <string name="type_something">Type Something</string>
+
+    <string name="search_results">Search Results</string>
+    <string name="random_gif">Random Gif</string>
+</resources>

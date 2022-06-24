@@ -1,0 +1,132 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id "androidx.navigation.safeargs.kotlin"
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "ir.ebcom.gifapplication"
+        minSdk 23
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "BASE_URL", '\"https://api.giphy.com/\"'
+        buildConfigField "String", "GIPHY_API_KEY", '\"ZY2avPUSjnFFy0FcjbTLpKNHfAdJD9Vt\"'
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures { viewBinding true }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    def core_kt_version = '1.7.0'
+    def appcompat_version = '1.4.1'
+    def material_version = '1.5.0'
+    def constraint_version = '2.1.3'
+    def nav_version = '2.4.1'
+    def lifecycle_version = '2.2.0'
+    def livedata_extension_version = '2.3.1'
+    def okhttp_version = '3.12.12'
+    def retrofit_version = '2.8.1'
+    def retrofit_jsonconverter_version = '2.9.0'
+    def gson_version = '2.8.9'
+    def hilt_version = '2.40.5'
+    def multidex_version = '2.0.1'
+    def glide_version = '4.13.0'
+
+    //    Testing
+    def junit4_version = '4.13.2'
+    def junit_ext_version = '1.1.3'
+    def espresso_version = '3.4.0'
+    def arch_core_version = '2.1.0'
+    def coroutine_test_version = '1.2.1'
+    def truth_version = '1.0.1'
+    def mockito_version = '2.21.0'
+    def fragment_testing_version = '1.3.0-alpha08'
+
+    implementation "androidx.core:core-ktx:$core_kt_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+
+    // navigation component
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$livedata_extension_version")
+
+    //Network
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
+    //Retrofit Adapters
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_jsonconverter_version"
+
+    //Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    //Gson
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    // multi dex
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+
+    //Junit4
+    testImplementation "junit:junit:$junit4_version"
+
+    //test extensions
+    androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
+    implementation "androidx.test.ext:junit-ktx:$junit_ext_version"
+
+    // Hilt testing
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    kaptAndroidTest "com.google.dagger:hilt-compiler:$hilt_version"
+
+    //Espresso
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:3.3.0"
+
+    testImplementation "org.hamcrest:hamcrest-all:1.3"
+    testImplementation "androidx.arch.core:core-testing:$arch_core_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$arch_core_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_test_version"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_test_version"
+    testImplementation "com.google.truth:truth:$truth_version"
+    androidTestImplementation "com.google.truth:truth:$truth_version"
+    androidTestImplementation "org.mockito:mockito-core:$mockito_version"
+    androidTestImplementation 'org.mockito:mockito-android:3.2.4'
+    debugImplementation "androidx.fragment:fragment-testing:$fragment_testing_version"
+}

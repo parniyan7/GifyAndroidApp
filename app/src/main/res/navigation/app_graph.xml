@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph.xml"
+    app:startDestination="@id/homeGifFragment">
+
+    <fragment
+        android:id="@+id/homeGifFragment"
+        android:name="ir.ebcom.gifapplication.ui.fragment.HomeGifFragment"
+        android:label="RandomGifFragment"
+        tools:layout="@layout/fragment_home_gif">
+        <action
+            android:id="@+id/action_home_to_gif_detail"
+            app:destination="@id/gifDetailsFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/pop_exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/pop_exit_to_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gifDetailsFragment"
+        android:name="ir.ebcom.gifapplication.ui.fragment.GifDetailsFragment"
+        android:label="GifDetailsFragment"
+        tools:layout="@layout/fragment_gif_details">
+
+        <argument
+            android:name="gifDetails"
+            app:argType="ir.ebcom.gifapplication.data.localmodel.GifModel" />
+
+    </fragment>
+</navigation>
