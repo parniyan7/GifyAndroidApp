@@ -1,7 +1,7 @@
 # GifyAndroidApp
 ## This is a Native Android application with Kotlin language for loading Gifs using MVVM architecture.
 
-## Libraries the I have used are as followes:
+## Libraries that I have used are as followes:
 
 
 
